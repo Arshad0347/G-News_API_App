@@ -7,10 +7,6 @@ const apiKey = import.meta.env.VITE_API_KEY;
     const [news,setNews]=useState(null);
     const fetchNews = async () => {
         const News_URL= await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${apiKey}`);
-        if(!News_URL.ok){
-            throw new Error("Failed to fetch news");
-        }
-        
         const data=await News_URL.json();
     setNews(data.articles);    
     }
