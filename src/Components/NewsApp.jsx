@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Card from "./Card";
 const NewsApp = () => {
-const apiKey = import.meta.env.VITE_API_KEY;
-    const [search,setSearch]=useState("India");
+const API_KEY = "2679975d819a41e1b39eb69ccfed48ee"
+    const [search,setSearch]=useState("");
     const [news,setNews]=useState(null);
     const fetchNews = async () => {
-        const News_URL= await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${apiKey}`);
+        const News_URL= await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`);
         const data=await News_URL.json();
     setNews(data.articles);    
     }
