@@ -5,12 +5,12 @@ const Card = ({MyNews}) => {
   return <div className="card-container">
 {Array.isArray(MyNews) &&
 MyNews.map((item) => {
-  if(!item.urlToImage){
+  if(!item.image){
     return null
   }else{
     return (
       <div key={item.url} className="card">
-        <img src={item.urlToImage} alt="No Image" />
+        <img src={item.image} alt="No Image" />
         <div className="content">
   <a className="title" onClick={() => window.open(item.url, "_blank")}>{item.title}</a>
   <p>{item.description}</p>

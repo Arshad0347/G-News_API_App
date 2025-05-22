@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Card from "./Card";
 const NewsApp = () => {
-const apiKey = "2679975d819a41e1b39eb69ccfed48ee";
+const API_KEY="16acce832f2ed4a8600bdf5f11b98310"
     const [search,setSearch]=useState("India");
     const [news,setNews]=useState(null);
     const fetchNews = async () => {
-        const News_URL= await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${apiKey}`);
+        const News_URL= await fetch(`https://gnews.io/api/v4/search?q=${search}&lang=en&country=us&max=12&apikey=${API_KEY}`);
         const data=await News_URL.json();
     setNews(data.articles);    
     }
@@ -48,5 +48,4 @@ const apiKey = "2679975d819a41e1b39eb69ccfed48ee";
     
   </div>;
 };
-
 export default NewsApp;

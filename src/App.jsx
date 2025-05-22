@@ -2,8 +2,6 @@
 import NewsApp from "./Components/NewsApp"
 
 function App() {
-
-
   return (
     <>
       <NewsApp></NewsApp>
